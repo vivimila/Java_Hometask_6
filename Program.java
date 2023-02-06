@@ -6,9 +6,10 @@
 // а второй работать как итератор или просто возвращать по индексу. 
 // Но всё это средствами HashMap!)
 
+// import java.security.Key;
 import java.util.HashMap;
-//import java.util.HashSet;
-import java.util.Set;
+// import java.util.HashSet;
+// import java.util.Set;
 
 public class Program {
     private static HashMap <Integer, Object> hashMap = new HashMap<>();
@@ -20,17 +21,23 @@ public class Program {
         add(44);
         add(55);
         // System.out.println(hashMap.keySet());
+        System.out.println(getString());
+
+        System.out.println(gettkey(1));
+        System.out.println(gettkey(20));
     }
 
-    private static Set<Integer> getString(){
-        return (hashMap.keySet()) ;
-        System.out.println(hashMap.keySet());
+    private static int gettkey(int num) {
+        return (Integer)hashMap.keySet().toArray()[num];
+    }
+
+    private static String getString(){
+        return hashMap.keySet().toString();
     }
 
     public static void add(Integer numbers) {
         hashMap.put(numbers, PRESENT);
-    } 
-               
+    }            
 }  
 
         
